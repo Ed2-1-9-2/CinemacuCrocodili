@@ -1,0 +1,1037 @@
+
+.sidebar-button {
+    float: left;
+    padding: 10px;
+position: absolute;
+        left: 500px;
+    
+}
+
+.logo-container {
+    float: right;
+    padding: 10px;
+    top: 0px;
+    position: absolute; /* Setează position la absolute */
+    right: -0px; /* Poziționează elementul la marginea dreaptă a containerului părinte */
+}
+
+.disabled-link {
+    pointer-events: none;
+    color: transparent; /* Poți schimba culoarea textului pentru a arăta că este inactiv */
+}
+.logoimage{
+    background: url('assets/logo.png');
+    left: -100% auto;
+    width: 100px;
+    height: 100px;
+}
+/*
+.logo{
+    background-image: url(assets/logo.png);
+    width: 100%;
+    height: 100%;
+}*/
+
+
+body {
+    background-color: rgb(0, 0, 0);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 130vh;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+#header {
+    position: fixed;
+    top: 0px;
+    left: -500px;
+    z-index: 5;
+    width: 1900px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    align-items: center;
+    padding: 10px;
+}
+header {
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #481b1b;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    left: -70%;
+  }
+  
+  
+  .sidebar a:hover {
+    color: transparent;
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+  }
+  
+  .openbtn {
+    background-color: transparent; /* Setează culoarea butonului ca fiind transparentă */
+    color: white; /* Setează culoarea textului în alb */
+    border: none; /* Elimină orice bordură a butonului (dacă există) */
+    font-size: 30px; /* Ajustează dimensiunea textului la preferințele tale */
+    transition: transform 0.2s; /* Adaugă o tranziție pentru proprietatea "transform" */
+    left: 100%;
+}
+.openbtn:active {
+    transform: translateX(5px); /* Mișcă butonul la dreapta cu 5px când este apăsat */
+}
+.mini-containerul {
+    background-image: url("assets/croco-fundal.png");
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.5); /* Adjust the alpha value (0.8) to control transparency */
+    opacity: 0.5;
+
+}
+
+.containerul {
+    background-color: #083404;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 650px;
+    margin: 0px;
+    padding: 0px;
+    border: 2px solid rgb(23, 54, 52);
+    position: absolute;
+    /* top: 100%; */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.row {
+    display: block;
+    justify-content: space-between;
+     align-items: center;
+    margin-bottom: 25px;
+}
+
+.calendar-container {
+    background: rgb(255, 255, 255);
+    width: 450px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 15px 40px;
+}
+
+.calendar-container header {
+    display: flex;
+    align-items: center;
+    padding: 25px 30px 10px;
+    justify-content: space-between;
+}
+
+header .calendar-navigation {
+    display: flex;
+}
+
+header .calendar-navigation span {
+    height: 38px;
+    width: 38px;
+    margin: 0px 1px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+    user-select: none;
+    color: rgb(174, 171, 171);
+    font-size: 1.9rem;
+}
+
+.calendar-navigation span:last-child {
+    margin-right: -10px;
+}
+
+header .calendar-navigation span:hover {
+    background: rgb(242, 242, 242);
+}
+
+header .calendar-current-date {
+    font-weight: 500;
+    font-size: 1.45rem;
+}
+
+.calendar-body {
+    padding: 20px;
+}
+
+.calendar-body ul {
+    list-style: none;
+    flex-wrap: wrap;
+    display: flex;
+    text-align: center;
+}
+
+.calendar-body .calendar-dates {
+    margin-bottom: 20px;
+}
+
+.calendar-body li {
+    width: calc(14.2857%);
+    font-size: 1.07rem;
+    color: rgb(65, 65, 65);
+}
+
+.calendar-body .calendar-weekdays li {
+    cursor: default;
+    font-weight: 500;
+}
+
+.calendar-body .calendar-dates li {
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.calendar-dates li.inactive {
+    color: rgb(170, 170, 170);
+}
+
+.calendar-dates li.active {
+    color: rgb(255, 255, 255);
+}
+
+.calendar-dates li::before {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.calendar-dates li.active::before {
+    background: rgb(99, 50, 197);
+}
+
+.calendar-dates li:not(.active):hover::before {
+    background: rgb(228, 225, 225);
+}
+
+.container2 {
+    width: 80%;
+    max-width: 900px;
+    margin: 0px auto;
+    padding: 20px;
+    background-color: rgb(102, 14, 14);
+    border: 2px solid brown;
+}
+.logo-container2 {
+    text-align: center; /* Afișează logourile în centrul containerului */
+    position: absolute;
+    bottom: 0; /* Fixează logourile în partea de jos a barei laterale */
+    width: 90%; /* Asigură lățimea completă a containerului pentru logouri */
+    background-color: transparent; /* Adăugați culoarea de fundal dorită */
+}
+.container3 {
+    background-color: #083404;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    width: 600px;
+    margin: 0px auto;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: relative;
+    left: -100px;
+}
+.container_invizibil{
+    background-color: transparent;
+    border: 0px;
+    margin: 0px auto;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container4 {
+    background-color: #083404;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 500px;
+    margin: 50px auto;
+    position: relative;
+    left: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+   
+}
+#description2 {
+    max-height: 400px; /* Set a maximum height for the container */
+    overflow: auto; /* Add a vertical scrollbar if content overflows */
+}
+#frunza{
+ border: transparent;
+ border-radius: 250px;
+ height: 250px;
+ width: 100px;
+ top: 25%;
+ left: 25%;
+}
+#rollage {
+    width: 100px;
+    height: 50px;
+    background-color: green; /* Setați culoarea de pornire */
+    border-radius: 50px; /* Pentru a face un dreptunghi rotund */
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    top: 10px;
+    transition: all 0.3s;
+  }
+  
+  #rollage.active {
+    background-color: orange; /* Culoarea atunci când butonul este apăsat */
+    width: 100px;
+    height: 50px;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    top: 10px;
+    color: white;
+    font-size: 15px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+.chamber_frunza{
+    height: 150px;
+    width: 150px;
+    top: 5%;
+    left: 5%;
+    border-style: dashed;
+    border-color: black;
+}
+.leaf-border {
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        var(--leaf-color-1, green) 0,
+        var(--leaf-color-1, green) 50%,
+        var(--leaf-color-2, green) 50%,
+        var(--leaf-color-2, green) 100%
+    );
+    border-style: dashed;
+    border-image-width: 15px ;    
+    border-image-slice: 90 px;
+    border-image-repeat: repeat;
+    border-color: green;
+        border-top-left-radius: 105px;
+        border-bottom-right-radius: 180px;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+        position: relative;
+        top: 5px;
+        right: 0.5px;
+}
+.leaf-border img {
+    border-style: dashed;
+    border-color: black;
+    border-width: 15px;  
+}
+.property {
+    text-align: center;
+    margin: 20px;
+    position: relative;
+    left: -250px;
+    top: -150px;
+}
+.property2 {
+    text-align: center;
+    margin: 20px;
+    position: relative;
+        top: 225px;
+        left: -120px;
+}
+.leaf {
+    width: 240px;
+    height: 240px;
+    -webkit-border-radius: 150px 0;
+    border-radius: 150px 0;
+    border-color: green;
+    border-style: dashed; /* Add this property */
+    overflow: hidden;
+    background: repeating-linear-gradient(
+        45deg,
+        var(--leaf-color-1, green) 0,
+        var(--leaf-color-1, green) 50%,
+        var(--leaf-color-2, green) 50%,
+        var(--leaf-color-2, green) 100%
+    );
+}
+.leaf2 {
+    width: 240px;
+    height: 240px;
+    -webkit-border-radius: 150px 0;
+    border-radius: 150px 0;
+    border-color: green;
+    border-style: dashed; /* Add this property */
+    overflow: hidden;
+    background: repeating-linear-gradient(
+        45deg,
+        var(--leaf-color-1, green) 0,
+        var(--leaf-color-1, green) 50%,
+        var(--leaf-color-2, green) 50%,
+        var(--leaf-color-2, green) 100%
+    );
+}
+.leaf-border2 {
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        var(--leaf-color-1, green) 0,
+        var(--leaf-color-1, green) 50%,
+        var(--leaf-color-2, green) 50%,
+        var(--leaf-color-2, green) 100%
+    );
+    border-style: dashed;
+    border-image-width: 15px ;    
+    border-image-slice: 90 px;
+    border-image-repeat: repeat;
+    border-color: green;
+        border-top-left-radius: 105px;
+        border-bottom-right-radius: 180px;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+        position: relative;
+        top: 5px;
+        right: 0.5px;
+}
+.leaf-border2 img {
+    border-style: dashed;
+    border-color: black;
+    border-width: 15px;  
+}
+.leaf img {
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.leaf-image {
+    width: 95%;
+    height: 95%;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.leaf-1 {
+    --leaf-color-1: green;
+    --leaf-color-2: black;
+}
+
+.leaf-2 {
+    --leaf-color-1: yellow;
+    --leaf-color-2: red;
+}
+
+.leaf-3 {
+	width: 75px;
+	height: 75px;
+	border-radius: 0 90px;
+	background-color: #2bb32b;
+	transform: rotate(0deg);
+}
+
+.leaf-4 {
+	width: 75px;
+	height: 75px;
+	border-radius: 0 100px;
+	background-color: #32cd32;
+	transform: rotate(0deg);
+}
+#img1{
+position: relative;
+}
+#img{
+position: relative;
+}
+.card-image {
+    height: 100px;
+    width: 100px;
+    border-radius: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.card-image .card-img {
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+
+.name {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(255, 165, 0);
+}
+
+#slider-container .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    height: 500px;
+    width: 500px;
+    padding: 10px;
+ 
+    text-align: center;
+    border-radius: 0px;
+    margin: 0px;
+    overflow: hidden;
+    background-color: rgba(58,11,22,255)
+    ;
+    border: 2px solid rgba(83,12,16,255);
+}
+.card-contur {
+    text-align: center;
+    border-radius: 0px;
+    margin: 0px;
+    overflow: hidden;
+    background-color: rgba(58,11,22,255)
+    ;
+    border: 2px solid rgba(83,12,16,255);
+    height: 600px;
+    width: 700px;
+    align-items: center;
+    /* width: 500px; */
+    position: relative;
+    top: 35px;
+    left: 435px;
+}
+.card-contur2 {
+    text-align: center;
+    border-radius: 0px;
+    margin: 0px;
+    background-color: orange;
+    border: 2px solid transparent;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: auto; /* Înălțime auto pentru a se ajusta conținutului */
+    width: 500px;
+    height: 200px;
+    align-items: center;
+    position: relative;
+    top: 0px;
+    left: 125px;
+}
+
+.card-content p,
+.card-content .holdit {
+    color: black;
+    text-align: center;
+    margin: 0; /* Elimină marginile pentru a se potrivi în interiorul .card-contur2 */
+    padding: 5px; /* Adaugă puțin spațiu în jurul conținutului */
+}
+.card-content .button{
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+}
+.slide-container {
+    max-width: 1120px;
+    width: 100%;
+    padding: 40px 0px;
+}
+
+.slide-content {
+    margin: 0px auto;
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 0px;
+}
+
+.card {
+    border-radius: 25px;
+    background-color: rgb(96, 6, 0);
+}
+
+.image-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+}
+.film-container {
+    display: flex;
+    justify-content: center; /* Centrează orizontal */
+    align-items: center;
+     /* Centrează vertical */
+}
+
+.film-color {
+    color: #4c9c3c; /* Setează culoarea textului la verde */
+    font-size: 20px; /* Setează dimensiunea fontului la 20 de pixeli */
+}
+.swipe-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 350px;
+    width: 100%;
+    padding: 60px 0;
+  }
+.image-content {
+    position: relative;
+    row-gap: 5px;
+    padding: 25px 0px;
+}
+.card-container {
+    background-color: #083404;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 700px;
+}
+.overlay {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(225, 132, 33);
+    border-radius: 25px 25px 0px;
+}
+
+.overlay::before, .overlay::after {
+    content: "";
+    position: absolute;
+    right: 0px;
+    bottom: -40px;
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+}
+
+.overlay::after {
+    border-radius: 0px 25px 0px 0px;
+}
+
+.description {
+    font-size: 14px;
+    color: rgb(224, 117, 22);
+    text-align: center;
+    width: 500px;
+    margin-bottom: 10px; /* Adaugă un spațiu între descriere și stele */
+}
+
+.button {
+    border: none;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    padding: 8px 16px;
+    background-color: crimson;
+    border-radius: 6px;
+    margin: 14px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    margin-bottom: 10px; /* Adaugă un spațiu între descriere și stele */
+    padding: 10px; /* Adaugă spațiu în interiorul butonului pentru a-l face mai vizibil */
+}
+ .holdit{
+    position: relative;
+    margin-bottom: 10px; /* Adaugă un spațiu între descriere și stele */
+
+}
+li{
+    width: 100%;
+    height: 1000px;
+}
+.button:active {
+    transform: translateX(5px); /* Adaugă o tranziție pentru proprietatea "transform" */
+
+}
+.button:hover {
+    background: rgb(225, 132, 33);
+}
+
+.swiper-navBtn {
+    color: rgb(225, 132, 33);
+    transition: color 0.3s ease 0s;
+}
+
+.swiper-navBtn:hover {
+    color: rgb(225, 132, 33);
+}
+
+.swiper-navBtn::before, .swiper-navBtn::after {
+    font-size: 35px;
+}
+
+.swiper-button-next {
+    right: 0px;
+}
+
+.swiper-button-prev {
+    left: 0px;
+}
+
+.swiper-pagination-bullet {
+    background-color: orange;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: orange;
+}
+
+@media screen and (max-width: 768px) {
+    .slide-content {
+        margin: 0px 10px;
+    }
+
+    .swiper-navBtn {
+        display: none;
+    }
+}
+
+.container5 {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 500px;
+    margin: 0px;
+    padding: 0px;
+    border-color: transparent;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.container2, .container3, .containerul, .container4 {
+    transition: border 0.3s;
+    border-color: #3a6c33;
+    box-shadow: 0 0 10px #3a6c33;
+}
+.container2:hover, .container3:hover, .containerul:hover, .container4:hover {
+    border: 2px solid ; /* Green color when hovered */
+    outline: none;
+        border-color: #3a6c33;
+        box-shadow: 0 0 10px #3a6c33;
+}
+.container2, .container3, .containerul, .container4 {
+    border: 2px solid #3a6c33; /* Green border color */
+}
+.card-container {
+    border: 2px solid #3a6c33;
+    transition: border 0.3s;
+    border-color: #3a6c33;
+}
+.card-container2 {
+    border: 2px solid #3a6c33;
+    transition: border 0.3s;
+    border-color: #3a6c33;
+}
+.card-container:hover {
+    border: 2px solid ; /* Green color when hovered */
+    outline: none;
+        border-color: #3a6c33;
+        box-shadow: 0 0 10px #3a6c33;
+}
+@keyframes shine {
+    0% {
+        border-color: #3a6c33;
+    }
+    50% {
+        border-color: #3a6c33; /* Slightly brighter green */
+    }
+    100% {
+        border-color: #3a6c33;
+    }
+}
+#data {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out 0s;
+}
+
+#data:focus {
+    max-height: 200px;
+}
+
+.h1 {
+    text-align: center;
+    color: rgb(247, 177, 0);
+}
+.retro-image {
+    filter: sepia(100%) saturate(120%) hue-rotate(10deg);
+}
+.col {
+    display: flex;
+    vertical-align: top;
+    width: 20px; /* Asta va face ca cele două coloane să fie pe aceeași linie */
+    padding: 10px; /* Adăugați spațiu între coloane, dacă doriți */
+    box-sizing: border-box; /* Asigurați-vă că padding-ul nu mărește lățimea coloanei */
+}
+.h2 {
+    color: #4c9c3c;
+}
+.my-heading{
+    color: green;
+}
+p {
+    color: rgb(255, 255, 255);
+}
+
+.movie-description {
+    margin-bottom: 10px;
+}
+
+.movie-description2 {
+    margin-bottom: 20px;
+}
+#nume{
+    color: white;
+}
+#pnume{
+    color: white;
+}
+#text {
+    color: white;
+}
+
+#password {
+    color: white;
+}
+
+#radio {
+    color: white;
+}
+
+#checkbox {
+    color: white;
+}
+
+#cinemaculoare {
+    color: white;
+}
+
+#idculoare {
+    color: white;
+}
+a {
+    color: white;
+    position: relative;
+    left: -30px;
+}
+
+.column1 {
+    flex: 1;
+    padding: 10px;
+    margin: 10px;
+}
+.column3 {
+    flex: 1;
+    padding: 10px;
+    position: relative;
+    top: 12.5px;
+    margin: 10px;
+}
+.columnptData {
+    flex: 1;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+.column2 {
+    flex: 1;
+    padding: 10px;
+    position: relative;
+    top: -20px;
+    margin: 10px;
+}
+.column4 {
+    flex: 1;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    top: -18px;
+}
+.custom-border {
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: border 0.3s, box-shadow 0.3s;
+    padding: 5px;
+}
+
+.custom-border:focus {
+    outline: none;
+    border-color: #FF0000; /* Red color when focused */
+    box-shadow: 0 0 10px #FF0000; /* Red shadow when focused */
+}
+
+.custom-border:hover {
+    border-color: #00FF00; /* Green color when hovered */
+}
+input{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 150px;
+}
+select{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 150px;
+}
+#footer {
+    top: 0px;
+    left: -10px;
+    z-index: 5;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    max-height: 75px; /* Seteaza inaltimea maxima pentru footer */
+}
+    .fa {
+        padding: 20px;
+        font-size: 30px;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+        color: rgb(80, 10, 10);
+      }
+      .fa-facebook {
+        background: transparent;
+        color: rgb(80, 10, 10);
+        height: 25px;
+        width: 25px;
+        margin-left: 10px; /* Add space between icons */
+    }
+    
+    .fa-instagram {
+        background: transparent;
+        color: rgb(80, 10, 10);
+        height: 25px;
+        width: 25px;
+        margin-left: 10px; /* Add space between icons */
+    }
+    .logo-container2 {
+        display: inline-block; /* Display the logo containers inline */
+        margin-left: 10px; /* Add some space between the icons */
+    }
+    
+    .logo2 a {
+        font-size: 24px; /* Adjust the icon size as needed */
+        text-decoration: none; /* Remove the underline from the icons (if any) */
+        margin-right: 10px; /* Add some space between the icons and the text */
+    }
+    .card-container2 {
+        background-color: #083404;
+        width: 100%;
+        height: 100px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    #footer .card-container .logo-container2 .logo {
+        /* Your CSS properties for the icons */
+        color: red !important; /* Example usage of !important */
+    }
+    #footer .card-container .social-icons {
+        display: flex; /* Display the icons in a row */
+    }
+    
+    #footer .card-container .social-icons a {
+        margin-right: 10px; /* Add spacing between the icons */
+        font-size: 24px; /* Adjust the icon size as needed */
+        color: crimson; /* Set the icon color */
+    }
+  
+   
+    .card-container2 {
+        background-color: #083404;
+        width: 100%;
+        height: 100px;
+        padding: 20px;
+        top: 150px;
+        box-sizing: border-box;
+        position: relative;
+    }
+    
+    .social-icons a {
+        font-size: 24px;
+        text-decoration: none;
+        margin-right: 10px;
+        color: crimson; /* Set the icon color */
+    }
+#film1{
+    text-align: center;
+}
